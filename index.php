@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+    base file to create students, populate their information, followed by 
+    displaying them in order sorted by their student IDs.
 -->
 <html>
     <head>
@@ -35,7 +34,16 @@ and open the template in the editor.
             $second->add_grade(80);
             $second->add_grade(50);
             $students['a456'] = $second;
+            
+            $third = new Student();
+            $third->surname = "Lim";
+            $third->first_name = "Norman";
+            $third->add_email('work','normanlim@gmail.com');
+            $third->add_grade(100);
+            $students['a999'] = $third;
                         
+            ksort($students);
+            
             foreach($students as $student)
                 echo $student->toString();
         ?>
